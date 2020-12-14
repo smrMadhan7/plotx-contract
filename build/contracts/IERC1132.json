@@ -1,0 +1,3224 @@
+{
+  "contractName": "IERC1132",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockReason",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "locked",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "name": "validity",
+          "type": "uint256"
+        },
+        {
+          "name": "claimed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_of",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_validity",
+          "type": "uint256"
+        }
+      ],
+      "name": "Locked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_of",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Unlocked",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        },
+        {
+          "name": "_time",
+          "type": "uint256"
+        }
+      ],
+      "name": "lock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        },
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        }
+      ],
+      "name": "tokensLocked",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        },
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "name": "_time",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokensLockedAtTime",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        }
+      ],
+      "name": "totalBalanceOf",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "name": "_time",
+          "type": "uint256"
+        }
+      ],
+      "name": "extendLock",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseLockAmount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        },
+        {
+          "name": "_reason",
+          "type": "bytes32"
+        }
+      ],
+      "name": "tokensUnlockable",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        }
+      ],
+      "name": "unlock",
+      "outputs": [
+        {
+          "name": "unlockableTokens",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_of",
+          "type": "address"
+        }
+      ],
+      "name": "getUnlockableTokens",
+      "outputs": [
+        {
+          "name": "unlockableTokens",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.7+commit.6da8b019\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"},{\"name\":\"_reason\",\"type\":\"bytes32\"},{\"name\":\"_time\",\"type\":\"uint256\"}],\"name\":\"tokensLockedAtTime\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_reason\",\"type\":\"bytes32\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_time\",\"type\":\"uint256\"}],\"name\":\"lock\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"}],\"name\":\"unlock\",\"outputs\":[{\"name\":\"unlockableTokens\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"}],\"name\":\"totalBalanceOf\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"},{\"name\":\"_reason\",\"type\":\"bytes32\"}],\"name\":\"tokensUnlockable\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"},{\"name\":\"_reason\",\"type\":\"bytes32\"}],\"name\":\"tokensLocked\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"lockReason\",\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_reason\",\"type\":\"bytes32\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"increaseLockAmount\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_reason\",\"type\":\"bytes32\"},{\"name\":\"_time\",\"type\":\"uint256\"}],\"name\":\"extendLock\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_of\",\"type\":\"address\"}],\"name\":\"getUnlockableTokens\",\"outputs\":[{\"name\":\"unlockableTokens\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"locked\",\"outputs\":[{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"validity\",\"type\":\"uint256\"},{\"name\":\"claimed\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_of\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_reason\",\"type\":\"bytes32\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"_validity\",\"type\":\"uint256\"}],\"name\":\"Locked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_of\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_reason\",\"type\":\"bytes32\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Unlocked\",\"type\":\"event\"}],\"devdoc\":{\"details\":\"see https://github.com/ethereum/EIPs/issues/1132\",\"methods\":{\"extendLock(bytes32,uint256)\":{\"details\":\"Extends lock for a specified reason and time\",\"params\":{\"_reason\":\"The reason to lock tokens\",\"_time\":\"Lock extension time in seconds\"}},\"getUnlockableTokens(address)\":{\"details\":\"Gets the unlockable tokens of a specified address\",\"params\":{\"_of\":\"The address to query the the unlockable token count of\"}},\"increaseLockAmount(bytes32,uint256)\":{\"details\":\"Increase number of tokens locked for a specified reason\",\"params\":{\"_amount\":\"Number of tokens to be increased\",\"_reason\":\"The reason to lock tokens\"}},\"lock(bytes32,uint256,uint256)\":{\"details\":\"Locks a specified amount of tokens against an address,     for a specified reason and time\",\"params\":{\"_amount\":\"Number of tokens to be locked\",\"_reason\":\"The reason to lock tokens\",\"_time\":\"Lock time in seconds\"}},\"tokensLocked(address,bytes32)\":{\"details\":\"Returns tokens locked for a specified address for a     specified reason\",\"params\":{\"_of\":\"The address whose tokens are locked\",\"_reason\":\"The reason to query the lock tokens for\"}},\"tokensLockedAtTime(address,bytes32,uint256)\":{\"details\":\"Returns tokens locked for a specified address for a     specified reason at a specific time\",\"params\":{\"_of\":\"The address whose tokens are locked\",\"_reason\":\"The reason to query the lock tokens for\",\"_time\":\"The timestamp to query the lock tokens for\"}},\"tokensUnlockable(address,bytes32)\":{\"details\":\"Returns unlockable tokens for a specified address for a specified reason\",\"params\":{\"_of\":\"The address to query the the unlockable token count of\",\"_reason\":\"The reason to query the unlockable tokens for\"}},\"totalBalanceOf(address)\":{\"details\":\"Returns total tokens held by an address (locked + transferable)\",\"params\":{\"_of\":\"The address to query the total balance of\"}},\"unlock(address)\":{\"details\":\"Unlocks the unlockable tokens of a specified address\",\"params\":{\"_of\":\"Address of user, claiming back unlockable tokens\"}}},\"title\":\"ERC1132 interface\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/madan/Documents/PlotX/PlotxContract/contracts/external/lockable-token/IERC1132.sol\":\"IERC1132\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/madan/Documents/PlotX/PlotxContract/contracts/external/lockable-token/IERC1132.sol\":{\"keccak256\":\"0xae56ed621f1dbb3cff848140d4fcca49beba722c4b4c3e42a71897565ae54c56\",\"urls\":[\"bzzr://d05758e87568481b9834788ec52708afa1581b12b387bdd24c21d06a176162cb\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.7;\n\n/**\n * @title ERC1132 interface\n * @dev see https://github.com/ethereum/EIPs/issues/1132\n */\n\ncontract IERC1132 {\n    /**\n     * @dev Reasons why a user's tokens have been locked\n     */\n    mapping(address => bytes32[]) public lockReason;\n\n    /**\n     * @dev locked token structure\n     */\n    struct LockToken {\n        uint256 amount;\n        uint256 validity;\n        bool claimed;\n    }\n\n    /**\n     * @dev Holds number & validity of tokens locked for a given reason for\n     *      a specified address\n     */\n    mapping(address => mapping(bytes32 => LockToken)) public locked;\n\n    /**\n     * @dev Records data of all the tokens Locked\n     */\n    event Locked(\n        address indexed _of,\n        bytes32 indexed _reason,\n        uint256 _amount,\n        uint256 _validity\n    );\n\n    /**\n     * @dev Records data of all the tokens unlocked\n     */\n    event Unlocked(\n        address indexed _of,\n        bytes32 indexed _reason,\n        uint256 _amount\n    );\n    \n    /**\n     * @dev Locks a specified amount of tokens against an address,\n     *      for a specified reason and time\n     * @param _reason The reason to lock tokens\n     * @param _amount Number of tokens to be locked\n     * @param _time Lock time in seconds\n     */\n    function lock(bytes32 _reason, uint256 _amount, uint256 _time)\n        public returns (bool);\n  \n    /**\n     * @dev Returns tokens locked for a specified address for a\n     *      specified reason\n     *\n     * @param _of The address whose tokens are locked\n     * @param _reason The reason to query the lock tokens for\n     */\n    function tokensLocked(address _of, bytes32 _reason)\n        public view returns (uint256 amount);\n    \n    /**\n     * @dev Returns tokens locked for a specified address for a\n     *      specified reason at a specific time\n     *\n     * @param _of The address whose tokens are locked\n     * @param _reason The reason to query the lock tokens for\n     * @param _time The timestamp to query the lock tokens for\n     */\n    function tokensLockedAtTime(address _of, bytes32 _reason, uint256 _time)\n        public view returns (uint256 amount);\n    \n    /**\n     * @dev Returns total tokens held by an address (locked + transferable)\n     * @param _of The address to query the total balance of\n     */\n    function totalBalanceOf(address _of)\n        public view returns (uint256 amount);\n    \n    /**\n     * @dev Extends lock for a specified reason and time\n     * @param _reason The reason to lock tokens\n     * @param _time Lock extension time in seconds\n     */\n    function extendLock(bytes32 _reason, uint256 _time)\n        public returns (bool);\n    \n    /**\n     * @dev Increase number of tokens locked for a specified reason\n     * @param _reason The reason to lock tokens\n     * @param _amount Number of tokens to be increased\n     */\n    function increaseLockAmount(bytes32 _reason, uint256 _amount)\n        public returns (bool);\n\n    /**\n     * @dev Returns unlockable tokens for a specified address for a specified reason\n     * @param _of The address to query the the unlockable token count of\n     * @param _reason The reason to query the unlockable tokens for\n     */\n    function tokensUnlockable(address _of, bytes32 _reason)\n        public view returns (uint256 amount);\n \n    /**\n     * @dev Unlocks the unlockable tokens of a specified address\n     * @param _of Address of user, claiming back unlockable tokens\n     */\n    function unlock(address _of)\n        public returns (uint256 unlockableTokens);\n\n    /**\n     * @dev Gets the unlockable tokens of a specified address\n     * @param _of The address to query the the unlockable token count of\n     */\n    function getUnlockableTokens(address _of)\n        public view returns (uint256 unlockableTokens);\n\n}",
+  "sourcePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/lockable-token/IERC1132.sol",
+  "ast": {
+    "absolutePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/lockable-token/IERC1132.sol",
+    "exportedSymbols": {
+      "IERC1132": [
+        15794
+      ]
+    },
+    "id": 15795,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15678,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ERC1132 interface\n@dev see https://github.com/ethereum/EIPs/issues/1132",
+        "fullyImplemented": false,
+        "id": 15794,
+        "linearizedBaseContracts": [
+          15794
+        ],
+        "name": "IERC1132",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15683,
+            "name": "lockReason",
+            "nodeType": "VariableDeclaration",
+            "scope": 15794,
+            "src": "215:47:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_bytes32_$dyn_storage_$",
+              "typeString": "mapping(address => bytes32[])"
+            },
+            "typeName": {
+              "id": 15682,
+              "keyType": {
+                "id": 15679,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "223:7:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "215:29:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_bytes32_$dyn_storage_$",
+                "typeString": "mapping(address => bytes32[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 15680,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "234:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "id": 15681,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "234:9:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                  "typeString": "bytes32[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IERC1132.LockToken",
+            "id": 15690,
+            "members": [
+              {
+                "constant": false,
+                "id": 15685,
+                "name": "amount",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "347:14:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15684,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "347:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15687,
+                "name": "validity",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "371:16:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15686,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "371:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15689,
+                "name": "claimed",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "397:12:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 15688,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "397:4:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "LockToken",
+            "nodeType": "StructDefinition",
+            "scope": 15794,
+            "src": "320:96:20",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15696,
+            "name": "locked",
+            "nodeType": "VariableDeclaration",
+            "scope": 15794,
+            "src": "546:63:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$_$",
+              "typeString": "mapping(address => mapping(bytes32 => struct IERC1132.LockToken))"
+            },
+            "typeName": {
+              "id": 15695,
+              "keyType": {
+                "id": 15691,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "554:7:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "546:49:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$_$",
+                "typeString": "mapping(address => mapping(bytes32 => struct IERC1132.LockToken))"
+              },
+              "valueType": {
+                "id": 15694,
+                "keyType": {
+                  "id": 15692,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "573:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "565:29:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$",
+                  "typeString": "mapping(bytes32 => struct IERC1132.LockToken)"
+                },
+                "valueType": {
+                  "contractScope": null,
+                  "id": 15693,
+                  "name": "LockToken",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 15690,
+                  "src": "584:9:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_LockToken_$15690_storage_ptr",
+                    "typeString": "struct IERC1132.LockToken"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@dev Records data of all the tokens Locked",
+            "id": 15706,
+            "name": "Locked",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15705,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15698,
+                  "indexed": true,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "704:19:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15697,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "704:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15700,
+                  "indexed": true,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "733:23:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15699,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "733:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15702,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "766:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "766:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15704,
+                  "indexed": false,
+                  "name": "_validity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "791:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15703,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "791:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "694:120:20"
+            },
+            "src": "682:133:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@dev Records data of all the tokens unlocked",
+            "id": 15714,
+            "name": "Unlocked",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15713,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15708,
+                  "indexed": true,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "913:19:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15707,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "913:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15710,
+                  "indexed": true,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "942:23:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15709,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "942:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15712,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "975:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15711,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:93:20"
+            },
+            "src": "889:108:20"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Locks a specified amount of tokens against an address,\n     for a specified reason and time\n@param _reason The reason to lock tokens\n@param _amount Number of tokens to be locked\n@param _time Lock time in seconds",
+            "id": 15725,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15721,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15716,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1289:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15715,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15718,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1306:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15717,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1306:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15720,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1323:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15719,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1323:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1288:49:20"
+            },
+            "returnParameters": {
+              "id": 15724,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15723,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1362:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15722,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1361:6:20"
+            },
+            "scope": 15794,
+            "src": "1275:93:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns tokens locked for a specified address for a\n     specified reason\n     * @param _of The address whose tokens are locked\n@param _reason The reason to query the lock tokens for",
+            "id": 15734,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensLocked",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15727,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1630:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15726,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15729,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1643:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15728,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1643:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1629:30:20"
+            },
+            "returnParameters": {
+              "id": 15733,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15732,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1689:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15731,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1689:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1688:16:20"
+            },
+            "scope": 15794,
+            "src": "1608:97:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns tokens locked for a specified address for a\n     specified reason at a specific time\n     * @param _of The address whose tokens are locked\n@param _reason The reason to query the lock tokens for\n@param _time The timestamp to query the lock tokens for",
+            "id": 15745,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensLockedAtTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15736,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2057:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15735,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2057:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15738,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2070:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15737,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2070:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15740,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2087:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15739,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2087:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2056:45:20"
+            },
+            "returnParameters": {
+              "id": 15744,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15743,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2131:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15742,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2131:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2130:16:20"
+            },
+            "scope": 15794,
+            "src": "2029:118:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns total tokens held by an address (locked + transferable)\n@param _of The address to query the total balance of",
+            "id": 15752,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalBalanceOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15748,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15747,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15752,
+                  "src": "2333:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15746,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2333:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2332:13:20"
+            },
+            "returnParameters": {
+              "id": 15751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15750,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15752,
+                  "src": "2375:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15749,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2375:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2374:16:20"
+            },
+            "scope": 15794,
+            "src": "2309:82:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Extends lock for a specified reason and time\n@param _reason The reason to lock tokens\n@param _time Lock extension time in seconds",
+            "id": 15761,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "extendLock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15754,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2593:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15753,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2593:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15756,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2610:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15755,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2610:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2592:32:20"
+            },
+            "returnParameters": {
+              "id": 15760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15759,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2649:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15758,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2649:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2648:6:20"
+            },
+            "scope": 15794,
+            "src": "2573:82:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Increase number of tokens locked for a specified reason\n@param _reason The reason to lock tokens\n@param _amount Number of tokens to be increased",
+            "id": 15770,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increaseLockAmount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15766,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15763,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2880:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15762,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2880:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15765,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2897:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15764,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2897:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2879:34:20"
+            },
+            "returnParameters": {
+              "id": 15769,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15768,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2938:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15767,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2938:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2937:6:20"
+            },
+            "scope": 15794,
+            "src": "2852:92:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns unlockable tokens for a specified address for a specified reason\n@param _of The address to query the the unlockable token count of\n@param _reason The reason to query the unlockable tokens for",
+            "id": 15779,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensUnlockable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15775,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15772,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3218:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15771,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3218:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15774,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3231:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15773,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3231:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3217:30:20"
+            },
+            "returnParameters": {
+              "id": 15778,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15777,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3277:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15776,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3277:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3276:16:20"
+            },
+            "scope": 15794,
+            "src": "3192:101:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Unlocks the unlockable tokens of a specified address\n@param _of Address of user, claiming back unlockable tokens",
+            "id": 15786,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unlock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15782,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15781,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15786,
+                  "src": "3464:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15780,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3464:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3463:13:20"
+            },
+            "returnParameters": {
+              "id": 15785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15784,
+                  "name": "unlockableTokens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15786,
+                  "src": "3501:24:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3501:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3500:26:20"
+            },
+            "scope": 15794,
+            "src": "3448:79:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets the unlockable tokens of a specified address\n@param _of The address to query the the unlockable token count of",
+            "id": 15793,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUnlockableTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15788,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15793,
+                  "src": "3713:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15787,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3713:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3712:13:20"
+            },
+            "returnParameters": {
+              "id": 15792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15791,
+                  "name": "unlockableTokens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15793,
+                  "src": "3755:24:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15790,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3755:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3754:26:20"
+            },
+            "scope": 15794,
+            "src": "3684:97:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15795,
+        "src": "118:3666:20"
+      }
+    ],
+    "src": "0:3784:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/lockable-token/IERC1132.sol",
+    "exportedSymbols": {
+      "IERC1132": [
+        15794
+      ]
+    },
+    "id": 15795,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15678,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ERC1132 interface\n@dev see https://github.com/ethereum/EIPs/issues/1132",
+        "fullyImplemented": false,
+        "id": 15794,
+        "linearizedBaseContracts": [
+          15794
+        ],
+        "name": "IERC1132",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15683,
+            "name": "lockReason",
+            "nodeType": "VariableDeclaration",
+            "scope": 15794,
+            "src": "215:47:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_bytes32_$dyn_storage_$",
+              "typeString": "mapping(address => bytes32[])"
+            },
+            "typeName": {
+              "id": 15682,
+              "keyType": {
+                "id": 15679,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "223:7:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "215:29:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_bytes32_$dyn_storage_$",
+                "typeString": "mapping(address => bytes32[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 15680,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "234:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "id": 15681,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "234:9:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                  "typeString": "bytes32[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IERC1132.LockToken",
+            "id": 15690,
+            "members": [
+              {
+                "constant": false,
+                "id": 15685,
+                "name": "amount",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "347:14:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15684,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "347:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15687,
+                "name": "validity",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "371:16:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15686,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "371:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 15689,
+                "name": "claimed",
+                "nodeType": "VariableDeclaration",
+                "scope": 15690,
+                "src": "397:12:20",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 15688,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "397:4:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "LockToken",
+            "nodeType": "StructDefinition",
+            "scope": 15794,
+            "src": "320:96:20",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15696,
+            "name": "locked",
+            "nodeType": "VariableDeclaration",
+            "scope": 15794,
+            "src": "546:63:20",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$_$",
+              "typeString": "mapping(address => mapping(bytes32 => struct IERC1132.LockToken))"
+            },
+            "typeName": {
+              "id": 15695,
+              "keyType": {
+                "id": 15691,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "554:7:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "546:49:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$_$",
+                "typeString": "mapping(address => mapping(bytes32 => struct IERC1132.LockToken))"
+              },
+              "valueType": {
+                "id": 15694,
+                "keyType": {
+                  "id": 15692,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "573:7:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "565:29:20",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_LockToken_$15690_storage_$",
+                  "typeString": "mapping(bytes32 => struct IERC1132.LockToken)"
+                },
+                "valueType": {
+                  "contractScope": null,
+                  "id": 15693,
+                  "name": "LockToken",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 15690,
+                  "src": "584:9:20",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_LockToken_$15690_storage_ptr",
+                    "typeString": "struct IERC1132.LockToken"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@dev Records data of all the tokens Locked",
+            "id": 15706,
+            "name": "Locked",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15705,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15698,
+                  "indexed": true,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "704:19:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15697,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "704:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15700,
+                  "indexed": true,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "733:23:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15699,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "733:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15702,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "766:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "766:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15704,
+                  "indexed": false,
+                  "name": "_validity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15706,
+                  "src": "791:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15703,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "791:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "694:120:20"
+            },
+            "src": "682:133:20"
+          },
+          {
+            "anonymous": false,
+            "documentation": "@dev Records data of all the tokens unlocked",
+            "id": 15714,
+            "name": "Unlocked",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15713,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15708,
+                  "indexed": true,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "913:19:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15707,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "913:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15710,
+                  "indexed": true,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "942:23:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15709,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "942:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15712,
+                  "indexed": false,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15714,
+                  "src": "975:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15711,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "975:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "903:93:20"
+            },
+            "src": "889:108:20"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Locks a specified amount of tokens against an address,\n     for a specified reason and time\n@param _reason The reason to lock tokens\n@param _amount Number of tokens to be locked\n@param _time Lock time in seconds",
+            "id": 15725,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "lock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15721,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15716,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1289:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15715,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1289:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15718,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1306:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15717,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1306:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15720,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1323:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15719,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1323:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1288:49:20"
+            },
+            "returnParameters": {
+              "id": 15724,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15723,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15725,
+                  "src": "1362:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15722,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1361:6:20"
+            },
+            "scope": 15794,
+            "src": "1275:93:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns tokens locked for a specified address for a\n     specified reason\n     * @param _of The address whose tokens are locked\n@param _reason The reason to query the lock tokens for",
+            "id": 15734,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensLocked",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15727,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1630:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15726,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15729,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1643:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15728,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1643:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1629:30:20"
+            },
+            "returnParameters": {
+              "id": 15733,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15732,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15734,
+                  "src": "1689:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15731,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1689:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1688:16:20"
+            },
+            "scope": 15794,
+            "src": "1608:97:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns tokens locked for a specified address for a\n     specified reason at a specific time\n     * @param _of The address whose tokens are locked\n@param _reason The reason to query the lock tokens for\n@param _time The timestamp to query the lock tokens for",
+            "id": 15745,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensLockedAtTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15736,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2057:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15735,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2057:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15738,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2070:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15737,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2070:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15740,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2087:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15739,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2087:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2056:45:20"
+            },
+            "returnParameters": {
+              "id": 15744,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15743,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15745,
+                  "src": "2131:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15742,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2131:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2130:16:20"
+            },
+            "scope": 15794,
+            "src": "2029:118:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns total tokens held by an address (locked + transferable)\n@param _of The address to query the total balance of",
+            "id": 15752,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalBalanceOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15748,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15747,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15752,
+                  "src": "2333:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15746,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2333:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2332:13:20"
+            },
+            "returnParameters": {
+              "id": 15751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15750,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15752,
+                  "src": "2375:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15749,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2375:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2374:16:20"
+            },
+            "scope": 15794,
+            "src": "2309:82:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Extends lock for a specified reason and time\n@param _reason The reason to lock tokens\n@param _time Lock extension time in seconds",
+            "id": 15761,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "extendLock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15757,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15754,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2593:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15753,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2593:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15756,
+                  "name": "_time",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2610:13:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15755,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2610:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2592:32:20"
+            },
+            "returnParameters": {
+              "id": 15760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15759,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15761,
+                  "src": "2649:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15758,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2649:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2648:6:20"
+            },
+            "scope": 15794,
+            "src": "2573:82:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Increase number of tokens locked for a specified reason\n@param _reason The reason to lock tokens\n@param _amount Number of tokens to be increased",
+            "id": 15770,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increaseLockAmount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15766,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15763,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2880:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15762,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2880:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15765,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2897:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15764,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2897:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2879:34:20"
+            },
+            "returnParameters": {
+              "id": 15769,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15768,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15770,
+                  "src": "2938:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15767,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2938:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2937:6:20"
+            },
+            "scope": 15794,
+            "src": "2852:92:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns unlockable tokens for a specified address for a specified reason\n@param _of The address to query the the unlockable token count of\n@param _reason The reason to query the unlockable tokens for",
+            "id": 15779,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokensUnlockable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15775,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15772,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3218:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15771,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3218:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15774,
+                  "name": "_reason",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3231:15:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15773,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3231:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3217:30:20"
+            },
+            "returnParameters": {
+              "id": 15778,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15777,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15779,
+                  "src": "3277:14:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15776,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3277:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3276:16:20"
+            },
+            "scope": 15794,
+            "src": "3192:101:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Unlocks the unlockable tokens of a specified address\n@param _of Address of user, claiming back unlockable tokens",
+            "id": 15786,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unlock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15782,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15781,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15786,
+                  "src": "3464:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15780,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3464:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3463:13:20"
+            },
+            "returnParameters": {
+              "id": 15785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15784,
+                  "name": "unlockableTokens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15786,
+                  "src": "3501:24:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3501:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3500:26:20"
+            },
+            "scope": 15794,
+            "src": "3448:79:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets the unlockable tokens of a specified address\n@param _of The address to query the the unlockable token count of",
+            "id": 15793,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getUnlockableTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15788,
+                  "name": "_of",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15793,
+                  "src": "3713:11:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15787,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3713:7:20",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3712:13:20"
+            },
+            "returnParameters": {
+              "id": 15792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15791,
+                  "name": "unlockableTokens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15793,
+                  "src": "3755:24:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15790,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3755:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3754:26:20"
+            },
+            "scope": 15794,
+            "src": "3684:97:20",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15795,
+        "src": "118:3666:20"
+      }
+    ],
+    "src": "0:3784:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.7+commit.6da8b019.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-12-10T08:30:24.965Z",
+  "devdoc": {
+    "details": "see https://github.com/ethereum/EIPs/issues/1132",
+    "methods": {
+      "extendLock(bytes32,uint256)": {
+        "details": "Extends lock for a specified reason and time",
+        "params": {
+          "_reason": "The reason to lock tokens",
+          "_time": "Lock extension time in seconds"
+        }
+      },
+      "getUnlockableTokens(address)": {
+        "details": "Gets the unlockable tokens of a specified address",
+        "params": {
+          "_of": "The address to query the the unlockable token count of"
+        }
+      },
+      "increaseLockAmount(bytes32,uint256)": {
+        "details": "Increase number of tokens locked for a specified reason",
+        "params": {
+          "_amount": "Number of tokens to be increased",
+          "_reason": "The reason to lock tokens"
+        }
+      },
+      "lock(bytes32,uint256,uint256)": {
+        "details": "Locks a specified amount of tokens against an address,     for a specified reason and time",
+        "params": {
+          "_amount": "Number of tokens to be locked",
+          "_reason": "The reason to lock tokens",
+          "_time": "Lock time in seconds"
+        }
+      },
+      "tokensLocked(address,bytes32)": {
+        "details": "Returns tokens locked for a specified address for a     specified reason",
+        "params": {
+          "_of": "The address whose tokens are locked",
+          "_reason": "The reason to query the lock tokens for"
+        }
+      },
+      "tokensLockedAtTime(address,bytes32,uint256)": {
+        "details": "Returns tokens locked for a specified address for a     specified reason at a specific time",
+        "params": {
+          "_of": "The address whose tokens are locked",
+          "_reason": "The reason to query the lock tokens for",
+          "_time": "The timestamp to query the lock tokens for"
+        }
+      },
+      "tokensUnlockable(address,bytes32)": {
+        "details": "Returns unlockable tokens for a specified address for a specified reason",
+        "params": {
+          "_of": "The address to query the the unlockable token count of",
+          "_reason": "The reason to query the unlockable tokens for"
+        }
+      },
+      "totalBalanceOf(address)": {
+        "details": "Returns total tokens held by an address (locked + transferable)",
+        "params": {
+          "_of": "The address to query the total balance of"
+        }
+      },
+      "unlock(address)": {
+        "details": "Unlocks the unlockable tokens of a specified address",
+        "params": {
+          "_of": "Address of user, claiming back unlockable tokens"
+        }
+      }
+    },
+    "title": "ERC1132 interface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

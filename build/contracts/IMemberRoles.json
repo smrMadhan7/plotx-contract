@@ -1,0 +1,2402 @@
+{
+  "contractName": "IMemberRoles",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "roleName",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "roleDescription",
+          "type": "string"
+        }
+      ],
+      "name": "MemberRole",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_initiator",
+          "type": "address"
+        }
+      ],
+      "name": "setInititorAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_roleName",
+          "type": "bytes32"
+        },
+        {
+          "name": "_roleDescription",
+          "type": "string"
+        },
+        {
+          "name": "_authorized",
+          "type": "address"
+        }
+      ],
+      "name": "addRole",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_memberAddress",
+          "type": "address"
+        },
+        {
+          "name": "_roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "_active",
+          "type": "bool"
+        }
+      ],
+      "name": "updateRole",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_roleId",
+          "type": "uint256"
+        },
+        {
+          "name": "_authorized",
+          "type": "address"
+        }
+      ],
+      "name": "changeAuthorized",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalRoles",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_memberRoleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "members",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "allMemberAddress",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_memberRoleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "numberOfMembers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_memberRoleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "authorized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_memberAddress",
+          "type": "address"
+        }
+      ],
+      "name": "roles",
+      "outputs": [
+        {
+          "name": "assignedRoles",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_memberAddress",
+          "type": "address"
+        },
+        {
+          "name": "_roleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "checkRole",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.7+commit.6da8b019\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"_memberRoleId\",\"type\":\"uint256\"}],\"name\":\"authorized\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_memberRoleId\",\"type\":\"uint256\"}],\"name\":\"numberOfMembers\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_roleName\",\"type\":\"bytes32\"},{\"name\":\"_roleDescription\",\"type\":\"string\"},{\"name\":\"_authorized\",\"type\":\"address\"}],\"name\":\"addRole\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_memberAddress\",\"type\":\"address\"},{\"name\":\"_roleId\",\"type\":\"uint256\"},{\"name\":\"_active\",\"type\":\"bool\"}],\"name\":\"updateRole\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_initiator\",\"type\":\"address\"}],\"name\":\"setInititorAddress\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_memberAddress\",\"type\":\"address\"},{\"name\":\"_roleId\",\"type\":\"uint256\"}],\"name\":\"checkRole\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_memberRoleId\",\"type\":\"uint256\"}],\"name\":\"members\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"allMemberAddress\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalRoles\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_memberAddress\",\"type\":\"address\"}],\"name\":\"roles\",\"outputs\":[{\"name\":\"assignedRoles\",\"type\":\"uint256[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_roleId\",\"type\":\"uint256\"},{\"name\":\"_authorized\",\"type\":\"address\"}],\"name\":\"changeAuthorized\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"roleId\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"roleName\",\"type\":\"bytes32\"},{\"indexed\":false,\"name\":\"roleDescription\",\"type\":\"string\"}],\"name\":\"MemberRole\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"addRole(bytes32,string,address)\":{\"details\":\"Adds new member role\",\"params\":{\"_authorized\":\"Authorized member against every role id\",\"_roleDescription\":\"New description hash\",\"_roleName\":\"New role name\"}},\"authorized(uint256)\":{\"details\":\"Return member address who holds the right to add/remove any member from specific role.\"},\"changeAuthorized(uint256,address)\":{\"details\":\"Change Member Address who holds the authority to Add/Delete any member from specific role.\",\"params\":{\"_authorized\":\"New authorized address against role id\",\"_roleId\":\"roleId to update its Authorized Address\"}},\"checkRole(address,uint256)\":{\"details\":\"Returns true if the given role id is assigned to a member.\",\"params\":{\"_memberAddress\":\"Address of member\",\"_roleId\":\"Checks member's authenticity with the roleId. i.e. Returns true if this roleId is assigned to member\"}},\"members(uint256)\":{\"details\":\"Gets the member addresses assigned by a specific role\",\"params\":{\"_memberRoleId\":\"Member role id\"},\"return\":\"roleId Role idallMemberAddress Member addresses of specified role id\"},\"numberOfMembers(uint256)\":{\"details\":\"Gets all members' length\",\"params\":{\"_memberRoleId\":\"Member role id\"},\"return\":\"memberRoleData[_memberRoleId].memberAddress.length Member length\"},\"roles(address)\":{\"details\":\"Get All role ids array that has been assigned to a member so far.\"},\"totalRoles()\":{\"details\":\"Return number of member roles\"},\"updateRole(address,uint256,bool)\":{\"details\":\"Assign or Delete a member from specific role.\",\"params\":{\"_active\":\"active is set to be True if we want to assign this role to member, False otherwise!\",\"_memberAddress\":\"Address of Member\",\"_roleId\":\"RoleId to update\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/madan/Documents/PlotX/PlotxContract/contracts/external/govblocks-protocol/interfaces/IMemberRoles.sol\":\"IMemberRoles\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/madan/Documents/PlotX/PlotxContract/contracts/external/govblocks-protocol/interfaces/IMemberRoles.sol\":{\"keccak256\":\"0x1e339091f1fe36eae040ae3a4dbb92433e1724859d8439e6ba8efc1117d3c3ac\",\"urls\":[\"bzzr://29f6e64cd6c7fc6ccb9a3cca6fbd5a0420a148abc1cb3713cbc99383dd4879fd\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/* Copyright (C) 2017 GovBlocks.io\n  This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n  This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n  You should have received a copy of the GNU General Public License\n    along with this program.  If not, see http://www.gnu.org/licenses/ */\n\npragma solidity 0.5.7;\n\n\ncontract IMemberRoles {\n\n    event MemberRole(uint256 indexed roleId, bytes32 roleName, string roleDescription);\n    \n    enum Role {UnAssigned, AdvisoryBoard, TokenHolder, DisputeResolution}\n\n    function setInititorAddress(address _initiator) external;\n\n    /// @dev Adds new member role\n    /// @param _roleName New role name\n    /// @param _roleDescription New description hash\n    /// @param _authorized Authorized member against every role id\n    function addRole(bytes32 _roleName, string memory _roleDescription, address _authorized) public;\n\n    /// @dev Assign or Delete a member from specific role.\n    /// @param _memberAddress Address of Member\n    /// @param _roleId RoleId to update\n    /// @param _active active is set to be True if we want to assign this role to member, False otherwise!\n    function updateRole(address _memberAddress, uint _roleId, bool _active) public;\n\n    /// @dev Change Member Address who holds the authority to Add/Delete any member from specific role.\n    /// @param _roleId roleId to update its Authorized Address\n    /// @param _authorized New authorized address against role id\n    function changeAuthorized(uint _roleId, address _authorized) public;\n\n    /// @dev Return number of member roles\n    function totalRoles() public view returns(uint256);\n\n    /// @dev Gets the member addresses assigned by a specific role\n    /// @param _memberRoleId Member role id\n    /// @return roleId Role id\n    /// @return allMemberAddress Member addresses of specified role id\n    function members(uint _memberRoleId) public view returns(uint, address[] memory allMemberAddress);\n\n    /// @dev Gets all members' length\n    /// @param _memberRoleId Member role id\n    /// @return memberRoleData[_memberRoleId].memberAddress.length Member length\n    function numberOfMembers(uint _memberRoleId) public view returns(uint);\n    \n    /// @dev Return member address who holds the right to add/remove any member from specific role.\n    function authorized(uint _memberRoleId) public view returns(address);\n\n    /// @dev Get All role ids array that has been assigned to a member so far.\n    function roles(address _memberAddress) public view returns(uint[] memory assignedRoles);\n\n    /// @dev Returns true if the given role id is assigned to a member.\n    /// @param _memberAddress Address of member\n    /// @param _roleId Checks member's authenticity with the roleId.\n    /// i.e. Returns true if this roleId is assigned to member\n    function checkRole(address _memberAddress, uint _roleId) public view returns(bool);   \n}",
+  "sourcePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/govblocks-protocol/interfaces/IMemberRoles.sol",
+  "ast": {
+    "absolutePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/govblocks-protocol/interfaces/IMemberRoles.sol",
+    "exportedSymbols": {
+      "IMemberRoles": [
+        15552
+      ]
+    },
+    "id": 15553,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15462,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "680:22:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 15552,
+        "linearizedBaseContracts": [
+          15552
+        ],
+        "name": "IMemberRoles",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 15470,
+            "name": "MemberRole",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15464,
+                  "indexed": true,
+                  "name": "roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "751:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15463,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "751:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15466,
+                  "indexed": false,
+                  "name": "roleName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "775:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15465,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15468,
+                  "indexed": false,
+                  "name": "roleDescription",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "793:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15467,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "793:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "750:66:18"
+            },
+            "src": "734:83:18"
+          },
+          {
+            "canonicalName": "IMemberRoles.Role",
+            "id": 15475,
+            "members": [
+              {
+                "id": 15471,
+                "name": "UnAssigned",
+                "nodeType": "EnumValue",
+                "src": "838:10:18"
+              },
+              {
+                "id": 15472,
+                "name": "AdvisoryBoard",
+                "nodeType": "EnumValue",
+                "src": "850:13:18"
+              },
+              {
+                "id": 15473,
+                "name": "TokenHolder",
+                "nodeType": "EnumValue",
+                "src": "865:11:18"
+              },
+              {
+                "id": 15474,
+                "name": "DisputeResolution",
+                "nodeType": "EnumValue",
+                "src": "878:17:18"
+              }
+            ],
+            "name": "Role",
+            "nodeType": "EnumDefinition",
+            "src": "827:69:18"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15480,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setInititorAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15477,
+                  "name": "_initiator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15480,
+                  "src": "930:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15476,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "930:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "929:20:18"
+            },
+            "returnParameters": {
+              "id": 15479,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:18"
+            },
+            "scope": 15552,
+            "src": "902:57:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Adds new member role\n @param _roleName New role name\n @param _roleDescription New description hash\n @param _authorized Authorized member against every role id",
+            "id": 15489,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15482,
+                  "name": "_roleName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1175:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15481,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1175:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15484,
+                  "name": "_roleDescription",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1194:30:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15483,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1194:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15486,
+                  "name": "_authorized",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1226:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15485,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1226:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1174:72:18"
+            },
+            "returnParameters": {
+              "id": 15488,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1253:0:18"
+            },
+            "scope": 15552,
+            "src": "1158:96:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Assign or Delete a member from specific role.\n @param _memberAddress Address of Member\n @param _roleId RoleId to update\n @param _active active is set to be True if we want to assign this role to member, False otherwise!",
+            "id": 15498,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15491,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1534:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15490,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1534:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15493,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1558:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15492,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1558:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15495,
+                  "name": "_active",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1572:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15494,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1572:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1533:52:18"
+            },
+            "returnParameters": {
+              "id": 15497,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1592:0:18"
+            },
+            "scope": 15552,
+            "src": "1514:79:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Change Member Address who holds the authority to Add/Delete any member from specific role.\n @param _roleId roleId to update its Authorized Address\n @param _authorized New authorized address against role id",
+            "id": 15505,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeAuthorized",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15503,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15500,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15505,
+                  "src": "1858:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15499,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1858:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15502,
+                  "name": "_authorized",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15505,
+                  "src": "1872:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15501,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1872:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1857:35:18"
+            },
+            "returnParameters": {
+              "id": 15504,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1899:0:18"
+            },
+            "scope": 15552,
+            "src": "1832:68:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return number of member roles",
+            "id": 15510,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalRoles",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15506,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1968:2:18"
+            },
+            "returnParameters": {
+              "id": 15509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15508,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15510,
+                  "src": "1991:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1991:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1990:9:18"
+            },
+            "scope": 15552,
+            "src": "1949:51:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets the member addresses assigned by a specific role\n @param _memberRoleId Member role id\n @return roleId Role id\n @return allMemberAddress Member addresses of specified role id",
+            "id": 15520,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "members",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15513,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15512,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2236:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15511,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2236:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2235:20:18"
+            },
+            "returnParameters": {
+              "id": 15519,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15515,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2276:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15514,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2276:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15518,
+                  "name": "allMemberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2282:33:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 15516,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2282:7:18",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 15517,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2282:9:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2275:41:18"
+            },
+            "scope": 15552,
+            "src": "2219:98:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets all members' length\n @param _memberRoleId Member role id\n @return memberRoleData[_memberRoleId].memberAddress.length Member length",
+            "id": 15527,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "numberOfMembers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15522,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15527,
+                  "src": "2511:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15521,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2511:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2510:20:18"
+            },
+            "returnParameters": {
+              "id": 15526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15525,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15527,
+                  "src": "2551:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15524,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2551:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2550:6:18"
+            },
+            "scope": 15552,
+            "src": "2486:71:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return member address who holds the right to add/remove any member from specific role.",
+            "id": 15534,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "authorized",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15530,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15529,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15534,
+                  "src": "2687:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15528,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2687:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2686:20:18"
+            },
+            "returnParameters": {
+              "id": 15533,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15532,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15534,
+                  "src": "2727:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15531,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2727:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2726:9:18"
+            },
+            "scope": 15552,
+            "src": "2667:69:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Get All role ids array that has been assigned to a member so far.",
+            "id": 15542,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "roles",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15536,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15542,
+                  "src": "2836:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15535,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2836:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2835:24:18"
+            },
+            "returnParameters": {
+              "id": 15541,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15540,
+                  "name": "assignedRoles",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15542,
+                  "src": "2880:27:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 15538,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2880:4:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 15539,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2880:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2879:29:18"
+            },
+            "scope": 15552,
+            "src": "2821:88:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns true if the given role id is assigned to a member.\n @param _memberAddress Address of member\n @param _roleId Checks member's authenticity with the roleId.\n i.e. Returns true if this roleId is assigned to member",
+            "id": 15551,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15547,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15544,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3186:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15543,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3186:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15546,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3210:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15545,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3210:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3185:38:18"
+            },
+            "returnParameters": {
+              "id": 15550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15549,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3244:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15548,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3244:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3243:6:18"
+            },
+            "scope": 15552,
+            "src": "3167:83:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15553,
+        "src": "705:2550:18"
+      }
+    ],
+    "src": "680:2575:18"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/madan/Documents/PlotX/PlotxContract/contracts/external/govblocks-protocol/interfaces/IMemberRoles.sol",
+    "exportedSymbols": {
+      "IMemberRoles": [
+        15552
+      ]
+    },
+    "id": 15553,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15462,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "680:22:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 15552,
+        "linearizedBaseContracts": [
+          15552
+        ],
+        "name": "IMemberRoles",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 15470,
+            "name": "MemberRole",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 15469,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15464,
+                  "indexed": true,
+                  "name": "roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "751:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15463,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "751:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15466,
+                  "indexed": false,
+                  "name": "roleName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "775:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15465,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15468,
+                  "indexed": false,
+                  "name": "roleDescription",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15470,
+                  "src": "793:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15467,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "793:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "750:66:18"
+            },
+            "src": "734:83:18"
+          },
+          {
+            "canonicalName": "IMemberRoles.Role",
+            "id": 15475,
+            "members": [
+              {
+                "id": 15471,
+                "name": "UnAssigned",
+                "nodeType": "EnumValue",
+                "src": "838:10:18"
+              },
+              {
+                "id": 15472,
+                "name": "AdvisoryBoard",
+                "nodeType": "EnumValue",
+                "src": "850:13:18"
+              },
+              {
+                "id": 15473,
+                "name": "TokenHolder",
+                "nodeType": "EnumValue",
+                "src": "865:11:18"
+              },
+              {
+                "id": 15474,
+                "name": "DisputeResolution",
+                "nodeType": "EnumValue",
+                "src": "878:17:18"
+              }
+            ],
+            "name": "Role",
+            "nodeType": "EnumDefinition",
+            "src": "827:69:18"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15480,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setInititorAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15477,
+                  "name": "_initiator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15480,
+                  "src": "930:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15476,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "930:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "929:20:18"
+            },
+            "returnParameters": {
+              "id": 15479,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:18"
+            },
+            "scope": 15552,
+            "src": "902:57:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Adds new member role\n @param _roleName New role name\n @param _roleDescription New description hash\n @param _authorized Authorized member against every role id",
+            "id": 15489,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15482,
+                  "name": "_roleName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1175:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15481,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1175:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15484,
+                  "name": "_roleDescription",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1194:30:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 15483,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1194:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15486,
+                  "name": "_authorized",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15489,
+                  "src": "1226:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15485,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1226:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1174:72:18"
+            },
+            "returnParameters": {
+              "id": 15488,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1253:0:18"
+            },
+            "scope": 15552,
+            "src": "1158:96:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Assign or Delete a member from specific role.\n @param _memberAddress Address of Member\n @param _roleId RoleId to update\n @param _active active is set to be True if we want to assign this role to member, False otherwise!",
+            "id": 15498,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15496,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15491,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1534:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15490,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1534:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15493,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1558:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15492,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1558:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15495,
+                  "name": "_active",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15498,
+                  "src": "1572:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15494,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1572:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1533:52:18"
+            },
+            "returnParameters": {
+              "id": 15497,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1592:0:18"
+            },
+            "scope": 15552,
+            "src": "1514:79:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Change Member Address who holds the authority to Add/Delete any member from specific role.\n @param _roleId roleId to update its Authorized Address\n @param _authorized New authorized address against role id",
+            "id": 15505,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "changeAuthorized",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15503,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15500,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15505,
+                  "src": "1858:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15499,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1858:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15502,
+                  "name": "_authorized",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15505,
+                  "src": "1872:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15501,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1872:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1857:35:18"
+            },
+            "returnParameters": {
+              "id": 15504,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1899:0:18"
+            },
+            "scope": 15552,
+            "src": "1832:68:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return number of member roles",
+            "id": 15510,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "totalRoles",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15506,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1968:2:18"
+            },
+            "returnParameters": {
+              "id": 15509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15508,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15510,
+                  "src": "1991:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1991:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1990:9:18"
+            },
+            "scope": 15552,
+            "src": "1949:51:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets the member addresses assigned by a specific role\n @param _memberRoleId Member role id\n @return roleId Role id\n @return allMemberAddress Member addresses of specified role id",
+            "id": 15520,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "members",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15513,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15512,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2236:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15511,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2236:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2235:20:18"
+            },
+            "returnParameters": {
+              "id": 15519,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15515,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2276:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15514,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2276:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15518,
+                  "name": "allMemberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15520,
+                  "src": "2282:33:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 15516,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2282:7:18",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 15517,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2282:9:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2275:41:18"
+            },
+            "scope": 15552,
+            "src": "2219:98:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Gets all members' length\n @param _memberRoleId Member role id\n @return memberRoleData[_memberRoleId].memberAddress.length Member length",
+            "id": 15527,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "numberOfMembers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15522,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15527,
+                  "src": "2511:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15521,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2511:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2510:20:18"
+            },
+            "returnParameters": {
+              "id": 15526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15525,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15527,
+                  "src": "2551:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15524,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2551:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2550:6:18"
+            },
+            "scope": 15552,
+            "src": "2486:71:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Return member address who holds the right to add/remove any member from specific role.",
+            "id": 15534,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "authorized",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15530,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15529,
+                  "name": "_memberRoleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15534,
+                  "src": "2687:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15528,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2687:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2686:20:18"
+            },
+            "returnParameters": {
+              "id": 15533,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15532,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15534,
+                  "src": "2727:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15531,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2727:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2726:9:18"
+            },
+            "scope": 15552,
+            "src": "2667:69:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Get All role ids array that has been assigned to a member so far.",
+            "id": 15542,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "roles",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15536,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15542,
+                  "src": "2836:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15535,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2836:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2835:24:18"
+            },
+            "returnParameters": {
+              "id": 15541,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15540,
+                  "name": "assignedRoles",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15542,
+                  "src": "2880:27:18",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 15538,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2880:4:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 15539,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2880:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2879:29:18"
+            },
+            "scope": 15552,
+            "src": "2821:88:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Returns true if the given role id is assigned to a member.\n @param _memberAddress Address of member\n @param _roleId Checks member's authenticity with the roleId.\n i.e. Returns true if this roleId is assigned to member",
+            "id": 15551,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkRole",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15547,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15544,
+                  "name": "_memberAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3186:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15543,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3186:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15546,
+                  "name": "_roleId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3210:12:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15545,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3210:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3185:38:18"
+            },
+            "returnParameters": {
+              "id": 15550,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15549,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15551,
+                  "src": "3244:4:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15548,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3244:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3243:6:18"
+            },
+            "scope": 15552,
+            "src": "3167:83:18",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15553,
+        "src": "705:2550:18"
+      }
+    ],
+    "src": "680:2575:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.7+commit.6da8b019.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-12-10T08:30:24.963Z",
+  "devdoc": {
+    "methods": {
+      "addRole(bytes32,string,address)": {
+        "details": "Adds new member role",
+        "params": {
+          "_authorized": "Authorized member against every role id",
+          "_roleDescription": "New description hash",
+          "_roleName": "New role name"
+        }
+      },
+      "authorized(uint256)": {
+        "details": "Return member address who holds the right to add/remove any member from specific role."
+      },
+      "changeAuthorized(uint256,address)": {
+        "details": "Change Member Address who holds the authority to Add/Delete any member from specific role.",
+        "params": {
+          "_authorized": "New authorized address against role id",
+          "_roleId": "roleId to update its Authorized Address"
+        }
+      },
+      "checkRole(address,uint256)": {
+        "details": "Returns true if the given role id is assigned to a member.",
+        "params": {
+          "_memberAddress": "Address of member",
+          "_roleId": "Checks member's authenticity with the roleId. i.e. Returns true if this roleId is assigned to member"
+        }
+      },
+      "members(uint256)": {
+        "details": "Gets the member addresses assigned by a specific role",
+        "params": {
+          "_memberRoleId": "Member role id"
+        },
+        "return": "roleId Role idallMemberAddress Member addresses of specified role id"
+      },
+      "numberOfMembers(uint256)": {
+        "details": "Gets all members' length",
+        "params": {
+          "_memberRoleId": "Member role id"
+        },
+        "return": "memberRoleData[_memberRoleId].memberAddress.length Member length"
+      },
+      "roles(address)": {
+        "details": "Get All role ids array that has been assigned to a member so far."
+      },
+      "totalRoles()": {
+        "details": "Return number of member roles"
+      },
+      "updateRole(address,uint256,bool)": {
+        "details": "Assign or Delete a member from specific role.",
+        "params": {
+          "_active": "active is set to be True if we want to assign this role to member, False otherwise!",
+          "_memberAddress": "Address of Member",
+          "_roleId": "RoleId to update"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
